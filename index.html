@@ -1,50 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Downloads</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        .game-list {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .game {
-            margin-bottom: 15px;
-        }
-        .game a {
-            text-decoration: none;
-            color: #007bff;
-        }
-        .game a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download File on Page Load</title>
+  <script>
+    window.onload = function() {
+      const link = document.createElement('a');
+      link.href = 'main.ini';  // Path to the file you want to download
+      link.download = 'main.ini';  // Name the file should have when downloaded
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
+  </script>
 </head>
 <body>
-    <h1>Game Downloads</h1>
-    <div class="game-list">
-        <div class="game">
-            <h3>Sonic Fighters</h3>
-            <p>
-                <a href="http://example.com/SonicFighters.iso" download>Sonic Fighters - Download</a>
-            </p>
-        </div>
-        <!-- Add more games below as needed -->
-    </div>
+  <h1>Your file should download automatically.</h1>
 </body>
 </html>
